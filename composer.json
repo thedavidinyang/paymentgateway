@@ -1,0 +1,48 @@
+{
+  "name": "thedavidinyang/paymentgateway",
+  "type": "library",
+  "description": "A full-featured simple php fluent interface for payment gateway integration solutions",
+  "homepage": "https://github.com/thedavidinyang/paymentgateway",
+  "license": "MIT",
+  "require": {
+    "php": "^8.0",
+    "ext-ctype": "*",
+    "ext-filter": "*",
+    "ext-hash": "*",
+    "ext-curl": "*",
+    "guzzlehttp/guzzle": "^7.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.6"
+  },
+  "authors": [
+    {
+      "name": "David Inyang",
+      "email": "davidinyang01@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "keywords": [
+    "php",
+    "api",
+    "php",
+    "pay",
+    "payment",
+    "api-client",
+    "payments",
+    "payment-gateway",
+    "payment-integration",
+    "payment-processing",
+    "paystack",
+    "flutterwave",
+    "paymentmethods",
+    "monnify"
+  ],
+  "autoload": {
+    "psr-4": {
+      "thedavidinyang\\paymentGateway\\": "src/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
