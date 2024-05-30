@@ -1,5 +1,5 @@
 <?php
-Namespace Src\Flutterwave;
+Namespace thedavidinyang\paymentGateway\Fluterwave;
 
 Class Bootstrap{
 
