@@ -1,11 +1,11 @@
 <?php
 declare (strict_types = 1);
 
-namespace thedavidinyang\paymentGateway;
+namespace thedavidinyang\payment;
 
 use Exception;
 
-class Boot
+class Gateway
 {
     protected array $monnifyConfig;
     protected array $paystackConfig;

@@ -40,7 +40,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "thedavidinyang\\paymentGateway\\": "src/"
+      "thedavidinyang\\payment\\": "src/"
     }
   },
   "minimum-stability": "dev",
