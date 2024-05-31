@@ -5,7 +5,7 @@
   "homepage": "https://github.com/thedavidinyang/paymentgateway",
   "license": "MIT",
   "require": {
-    "php": ">=7.0",
+    "php": ">=7.4",
     "ext-ctype": "*",
     "ext-filter": "*",
     "ext-hash": "*",

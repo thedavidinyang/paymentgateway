@@ -1,44 +1,41 @@
 <?php
 declare(strict_types=1);
+
 namespace thedavidinyang\paymentGateway;
+
+use Exception;
 
 class Boot
 {
+    protected string $monnifyConfig;
+    protected string $paystackConfig;
+    protected string $flutterwaveConfig;
+    protected string $config;
 
-    protected $monnifyConfig;
-    protected $paystackConfig;
-    protected $flutterwaveConfig;
-    protected $config;
+    protected string $provider;
 
-    protected $provider;
-
-    // initialize the service and set provider
-    public function init(string $data)
+    /**
+     * Initialize the service and set provider
+     *
+     * @param string $data
+     * @return $this
+     * @throws Exception
+     */
+    public function init(string $data): self
     {
-
-        try {
-            return $this->setProvider($data);
-
-        } catch (\Throwable $e) {
-
-            throw new Exception($e->getMessage());
-        }
-
-
+        return $this->setProvider($data);
     }
 
-    /// set the payment service provider
-    protected function setProvider($data)
+    /**
+     * Set the payment service provider
+     *
+     * @param string $data
+     * @return $this
+     * @throws Exception
+     */
+    protected function setProvider(string $data): self
     {
-        
-        try {
-            $this->provider = $data;
-            return $this;
-
-        } catch (\Throwable $e) {
-
-            throw new Exception($e->getMessage());
-        }
+        $this->provider = $data;
+        return $this;
     }
-
 }
