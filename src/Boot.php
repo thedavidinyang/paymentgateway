@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare (strict_types = 1);
 
 namespace thedavidinyang\paymentGateway;
 
@@ -64,4 +64,5 @@ class Boot
             // Optionally log the error or perform other actions before throwing
             throw new Exception('Configuratioin error: ' . $e->getMessage(), 0, $e);
         }
+    }
 }
