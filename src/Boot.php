@@ -7,9 +7,9 @@ use Exception;
 
 class Boot
 {
-    protected string $monnifyConfig;
-    protected string $paystackConfig;
-    protected string $flutterwaveConfig;
+    protected array $monnifyConfig;
+    protected array $paystackConfig;
+    protected array $flutterwaveConfig;
     protected string $config;
 
     protected string $provider;
@@ -23,7 +23,12 @@ class Boot
      */
     public function init(string $data): self
     {
-        return $this->setProvider($data);
+        try {
+            return $this->setProvider($data);
+        } catch (\Throwable $e) {
+            // Optionally log the error or perform other actions before throwing
+            throw new Exception('Error initializing the service: ' . $e->getMessage(), 0, $e);
+        }
     }
 
     /**
@@ -35,7 +40,28 @@ class Boot
      */
     protected function setProvider(string $data): self
     {
-        $this->provider = $data;
-        return $this;
+        try {
+            $this->provider = $data;
+            return $this;
+        } catch (\Throwable $e) {
+            // Optionally log the error or perform other actions before throwing
+            throw new Exception('Error setting the provider: ' . $e->getMessage(), 0, $e);
+        }
     }
+    /**
+     * Set the payment service provider configuration
+     *
+     * @param array $data
+     * @return $this
+     * @throws Exception
+     */
+    public function config(array $data): self
+    {
+        try {
+            $this->provider = $data;
+            return $this;
+        } catch (\Throwable $e) {
+            // Optionally log the error or perform other actions before throwing
+            throw new Exception('Configuratioin error: ' . $e->getMessage(), 0, $e);
+        }
 }
