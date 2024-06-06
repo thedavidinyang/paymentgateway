@@ -14,6 +14,14 @@ class Gateway
 
     protected string $provider;
 
+    protected const PROVIDERS = ['paystack', 'flutterwave', 'monnify'];
+
+    public function __construct($data)
+    {
+
+    
+    }
+
     /**
      * Initialize the service and set provider
      *
@@ -21,6 +29,7 @@ class Gateway
      * @return $this
      * @throws Exception
      */
+
     public function init(string $data): self
     {
         try {
@@ -41,12 +50,18 @@ class Gateway
     protected function setProvider(string $data): self
     {
         try {
-            $this->provider = $data;
+            $data = strtolower($data);
+            if (in_array($data, self::PROVIDERS)) {
+                $this->provider = $data;
+            } else {
+                throw new Exception('Provider must be supported');
+            }
             return $this;
         } catch (\Throwable $e) {
             // Optionally log the error or perform other actions before throwing
             throw new Exception('Error setting the provider: ' . $e->getMessage(), 0, $e);
         }
+    }
     }
     /**
      * Set the payment service provider configuration
