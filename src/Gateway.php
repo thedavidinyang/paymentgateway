@@ -72,10 +72,7 @@ class Gateway
     public function config(array $data): self
     {
         try {
-
-            $variable = $this->provider;
-
-            switch ($variable) {
+            switch ($this->provider) {
                 case 'paystack':
                     $this->paystackConfig = $data;
                     break;
@@ -83,20 +80,16 @@ class Gateway
                     $this->flutterwaveConfig = $data;
                     break;
                 case 'monnify':
-
                     $this->monnifyConfig = $data;
-
                     break;
                 default:
-
                     throw new Exception('Provider not set');
-                    break;
             }
 
             return $this;
         } catch (\Throwable $e) {
             // Optionally log the error or perform other actions before throwing
-            throw new Exception('Configuratioin error: ' . $e->getMessage(), 0, $e);
+            throw new Exception('Configuration error: ' . $e->getMessage(), 0, $e);
         }
     }
 }
