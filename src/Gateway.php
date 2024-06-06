@@ -62,7 +62,7 @@ class Gateway
             throw new Exception('Error setting the provider: ' . $e->getMessage(), 0, $e);
         }
     }
-    }
+    
     /**
      * Set the payment service provider configuration
      *
