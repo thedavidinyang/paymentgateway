@@ -19,7 +19,6 @@ class Gateway
     public function __construct($data)
     {
 
-    
     }
 
     /**
@@ -54,7 +53,7 @@ class Gateway
             if (in_array($data, self::PROVIDERS)) {
                 $this->provider = $data;
             } else {
-                throw new Exception('Provider must be supported');
+                throw new Exception('Provider not supported');
             }
             return $this;
         } catch (\Throwable $e) {
@@ -62,7 +61,7 @@ class Gateway
             throw new Exception('Error setting the provider: ' . $e->getMessage(), 0, $e);
         }
     }
-    
+
     /**
      * Set the payment service provider configuration
      *
@@ -73,7 +72,27 @@ class Gateway
     public function config(array $data): self
     {
         try {
-            $this->provider = $data;
+
+            $variable = $this->provider;
+
+            switch ($variable) {
+                case 'paystack':
+                    $this->paystackConfig = $data;
+                    break;
+                case 'flutterwave':
+                    $this->flutterwaveConfig = $data;
+                    break;
+                case 'monnify':
+
+                    $this->monnifyConfig = $data;
+
+                    break;
+                default:
+
+                    throw new Exception('Provider not set');
+                    break;
+            }
+
             return $this;
         } catch (\Throwable $e) {
             // Optionally log the error or perform other actions before throwing
