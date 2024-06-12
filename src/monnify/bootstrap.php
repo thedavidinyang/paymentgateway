@@ -5,10 +5,13 @@ namespace thedavidinyang\payment\monnify;
 
 use Exception;
 use thedavidinyang\payment\helpers\checkConfig;
+USE thedavidinyang\payment\helpers\checkService;
 
 class Bootstrap
 {
     use checkConfig;
+    use checkService;
+
 
     public const SERVICES = [];
     public const PAY_CONFIG = [];
