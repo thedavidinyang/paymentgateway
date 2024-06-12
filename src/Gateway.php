@@ -5,6 +5,10 @@ namespace thedavidinyang\payment;
 
 use Exception;
 
+use thedavidinyang\payment\flutterwave\Bootstrap as ftw;
+use thedavidinyang\payment\monnify\Bootstrap as mfy;
+use thedavidinyang\payment\paystack\Bootstrap as pst;
+
 class Gateway
 {
     protected array $monnifyConfig;
