@@ -3,8 +3,8 @@ declare (strict_types = 1);
 
 namespace thedavidinyang\payment\monnify;
 
-use thedavidinyang\payment\helpers\checkConfig;
 use Exception;
+use thedavidinyang\payment\helpers\checkConfig;
 
 class Bootstrap
 {
@@ -15,9 +15,10 @@ class Bootstrap
 
     public array $serviceConfig;
 
-    public function __construct(array $param){
+    public function __construct(array $param)
+    {
 
-        if ($this->checker($param, self::PAY_CONFIG)){
+        if ($this->checker($param, self::PAY_CONFIG)) {
 
             $this->setServiceConfig($param);
         } else {
@@ -26,10 +27,10 @@ class Bootstrap
 
         }
 
-
     }
 
-    private function setServiceConfig(array $config){
+    private function setServiceConfig(array $config)
+    {
 
         $this->serviceConfig = $config;
     }
