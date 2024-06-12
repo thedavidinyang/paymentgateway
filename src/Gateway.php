@@ -81,15 +81,15 @@ class Gateway
             switch ($this->provider) {
                 case 'paystack':
                     $this->paystackConfig = $data;
-                    $this->service = new pst();
+                    $this->service = new pst($this->paystackConfig );
                     break;
                 case 'flutterwave':
                     $this->flutterwaveConfig = $data;
-                    $this->service = new ftw();
+                    $this->service = new ftw($this->flutterwaveConfig);
                     break;
                 case 'monnify':
                     $this->monnifyConfig = $data;
-                    $this->service = new mfy();
+                    $this->service = new mfy($this->monnifyConfig);
                     break;
                 default:
                     throw new Exception('Provider not set');
