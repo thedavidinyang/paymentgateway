@@ -18,6 +18,8 @@ class Gateway
 
     protected string $provider;
 
+    protected $service;
+
     protected const PROVIDERS = ['paystack', 'flutterwave', 'monnify'];
 
     public function __construct($data)
@@ -79,12 +81,15 @@ class Gateway
             switch ($this->provider) {
                 case 'paystack':
                     $this->paystackConfig = $data;
+                    $this->service = new pst();
                     break;
                 case 'flutterwave':
                     $this->flutterwaveConfig = $data;
+                    $this->service = new ftw();
                     break;
                 case 'monnify':
                     $this->monnifyConfig = $data;
+                    $this->service = new mfy();
                     break;
                 default:
                     throw new Exception('Provider not set');
