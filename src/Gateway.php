@@ -53,7 +53,7 @@ class Gateway
             if (in_array($data, self::PROVIDERS)) {
                 $this->provider = $data;
             } else {
-                throw new Exception('Provider not supported');
+                throw new Exception('your chosen provider is not supported yet');
             }
             return $this;
         } catch (\Throwable $e) {
