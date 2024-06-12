@@ -8,6 +8,8 @@ use Exception;
 
 class Bootstrap{
     public const SERVICES = [];
+    public const PAY_CONFIG = [];
+
 
 
 }
