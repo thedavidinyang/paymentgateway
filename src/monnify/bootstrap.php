@@ -1,16 +1,15 @@
 <?php
 declare (strict_types = 1);
 
-namespace thedavidinyang\payment\monnify ;
+namespace thedavidinyang\payment\monnify;
 
+use thedavidinyang\payment\helpers\checkConfig;
 
-use Exception;
+class Bootstrap
+{
+    use checkConfig;
 
-class Bootstrap{
     public const SERVICES = [];
     public const PAY_CONFIG = [];
 
-
-
 }
-
