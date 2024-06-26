@@ -5,7 +5,7 @@ namespace thedavidinyang\payment\paystack;
 
 use Exception;
 use thedavidinyang\payment\helpers\checkConfig;
-USE thedavidinyang\payment\helpers\checkService;
+use thedavidinyang\payment\helpers\checkService;
 
 class Bootstrap
 {
@@ -23,6 +23,7 @@ class Bootstrap
         if ($this->checker($param, self::PAY_CONFIG)) {
 
             $this->setServiceConfig($param);
+            
         } else {
 
             throw new Exception('Expected config parameters not met');
